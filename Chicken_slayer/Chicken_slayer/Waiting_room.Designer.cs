@@ -152,7 +152,7 @@
             // 
             guna2PictureBox1.BackColor = Color.Transparent;
             guna2PictureBox1.CustomizableEdges = customizableEdges7;
-            guna2PictureBox1.Image = Properties.Resources.latest1;
+            guna2PictureBox1.Image = Properties.Resources.latest;
             guna2PictureBox1.ImageRotate = 0F;
             guna2PictureBox1.Location = new Point(89, 126);
             guna2PictureBox1.Name = "guna2PictureBox1";

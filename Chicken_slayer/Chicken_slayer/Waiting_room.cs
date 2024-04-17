@@ -21,6 +21,5 @@ namespace Chicken_slayer
         {
             this.DialogResult = DialogResult.OK;
         }
-
     }
 }

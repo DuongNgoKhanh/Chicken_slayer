@@ -163,6 +163,7 @@
             // 
             // btn_back
             // 
+            btn_back.Animated = true;
             btn_back.BackColor = Color.Transparent;
             btn_back.BorderRadius = 22;
             btn_back.CustomizableEdges = customizableEdges5;

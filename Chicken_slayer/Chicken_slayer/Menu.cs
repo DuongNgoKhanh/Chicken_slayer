@@ -29,7 +29,7 @@
             BXH bXH = new BXH();
             bXH.ShowDialog();
             this.Show();
-            
+
         }
 
     }

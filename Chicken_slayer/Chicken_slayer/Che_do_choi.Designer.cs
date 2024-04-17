@@ -106,7 +106,7 @@
             guna2PictureBox2.Cursor = Cursors.Hand;
             guna2PictureBox2.CustomizableEdges = customizableEdges4;
             guna2PictureBox2.ErrorImage = null;
-            guna2PictureBox2.Image = Properties.Resources.baby_chicken;
+            guna2PictureBox2.Image = Properties.Resources.baby_chicken1;
             guna2PictureBox2.ImageRotate = 0F;
             guna2PictureBox2.Location = new Point(142, 129);
             guna2PictureBox2.Name = "guna2PictureBox2";

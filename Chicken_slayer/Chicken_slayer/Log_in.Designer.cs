@@ -32,22 +32,23 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             btn_back = new Guna.UI2.WinForms.Guna2Button();
             guna2ContainerControl1 = new Guna.UI2.WinForms.Guna2ContainerControl();
-            guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             btn_log_in = new Guna.UI2.WinForms.Guna2Button();
+            guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             guna2ContainerControl1.SuspendLayout();
             SuspendLayout();
             // 
             // btn_back
             // 
+            btn_back.Animated = true;
             btn_back.BackColor = Color.Transparent;
             btn_back.BorderRadius = 22;
             btn_back.CustomizableEdges = customizableEdges1;
@@ -84,6 +85,62 @@
             guna2ContainerControl1.TabIndex = 18;
             guna2ContainerControl1.Text = "guna2ContainerControl1";
             // 
+            // btn_log_in
+            // 
+            btn_log_in.Animated = true;
+            btn_log_in.AutoRoundedCorners = true;
+            btn_log_in.BackColor = Color.Transparent;
+            btn_log_in.BorderRadius = 22;
+            btn_log_in.CustomizableEdges = customizableEdges3;
+            btn_log_in.DisabledState.BorderColor = Color.DarkGray;
+            btn_log_in.DisabledState.CustomBorderColor = Color.DarkGray;
+            btn_log_in.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btn_log_in.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_log_in.FillColor = Color.FromArgb(114, 218, 251);
+            btn_log_in.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_log_in.ForeColor = Color.White;
+            btn_log_in.Location = new Point(61, 263);
+            btn_log_in.Name = "btn_log_in";
+            btn_log_in.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btn_log_in.Size = new Size(204, 47);
+            btn_log_in.TabIndex = 19;
+            btn_log_in.Text = "LOG IN";
+            // 
+            // guna2HtmlLabel2
+            // 
+            guna2HtmlLabel2.AutoSize = false;
+            guna2HtmlLabel2.BackColor = Color.Transparent;
+            guna2HtmlLabel2.Font = new Font("Segoe UI", 7F, FontStyle.Bold);
+            guna2HtmlLabel2.ForeColor = Color.FromArgb(114, 218, 251);
+            guna2HtmlLabel2.Location = new Point(61, 188);
+            guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            guna2HtmlLabel2.Size = new Size(214, 42);
+            guna2HtmlLabel2.TabIndex = 6;
+            guna2HtmlLabel2.Text = "Chưa có ý tưởng? Nhấp vào đây để tự động tạo username";
+            guna2HtmlLabel2.TextAlignment = ContentAlignment.TopCenter;
+            // 
+            // guna2HtmlLabel1
+            // 
+            guna2HtmlLabel1.BackColor = Color.Transparent;
+            guna2HtmlLabel1.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            guna2HtmlLabel1.ForeColor = Color.FromArgb(114, 218, 251);
+            guna2HtmlLabel1.Location = new Point(33, 101);
+            guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            guna2HtmlLabel1.Size = new Size(97, 30);
+            guna2HtmlLabel1.TabIndex = 5;
+            guna2HtmlLabel1.Text = "Username";
+            // 
+            // guna2HtmlLabel3
+            // 
+            guna2HtmlLabel3.BackColor = Color.Transparent;
+            guna2HtmlLabel3.Font = new Font("Showcard Gothic", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel3.ForeColor = Color.FromArgb(7, 175, 229);
+            guna2HtmlLabel3.Location = new Point(113, 19);
+            guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            guna2HtmlLabel3.Size = new Size(123, 52);
+            guna2HtmlLabel3.TabIndex = 4;
+            guna2HtmlLabel3.Text = "LOGIN";
+            // 
             // guna2TextBox1
             // 
             guna2TextBox1.AutoRoundedCorners = true;
@@ -108,62 +165,6 @@
             guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges6;
             guna2TextBox1.Size = new Size(214, 41);
             guna2TextBox1.TabIndex = 2;
-            // 
-            // guna2HtmlLabel3
-            // 
-            guna2HtmlLabel3.BackColor = Color.Transparent;
-            guna2HtmlLabel3.Font = new Font("Showcard Gothic", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel3.ForeColor = Color.FromArgb(7, 175, 229);
-            guna2HtmlLabel3.Location = new Point(113, 19);
-            guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            guna2HtmlLabel3.Size = new Size(123, 52);
-            guna2HtmlLabel3.TabIndex = 4;
-            guna2HtmlLabel3.Text = "LOGIN";
-            // 
-            // guna2HtmlLabel1
-            // 
-            guna2HtmlLabel1.BackColor = Color.Transparent;
-            guna2HtmlLabel1.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            guna2HtmlLabel1.ForeColor = Color.FromArgb(114, 218, 251);
-            guna2HtmlLabel1.Location = new Point(33, 101);
-            guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(97, 30);
-            guna2HtmlLabel1.TabIndex = 5;
-            guna2HtmlLabel1.Text = "Username";
-            // 
-            // guna2HtmlLabel2
-            // 
-            guna2HtmlLabel2.AutoSize = false;
-            guna2HtmlLabel2.BackColor = Color.Transparent;
-            guna2HtmlLabel2.Font = new Font("Segoe UI", 7F, FontStyle.Bold);
-            guna2HtmlLabel2.ForeColor = Color.FromArgb(114, 218, 251);
-            guna2HtmlLabel2.Location = new Point(61, 188);
-            guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            guna2HtmlLabel2.Size = new Size(214, 42);
-            guna2HtmlLabel2.TabIndex = 6;
-            guna2HtmlLabel2.Text = "Chưa có ý tưởng? Nhấp vào đây để tự động tạo username";
-            guna2HtmlLabel2.TextAlignment = ContentAlignment.TopCenter;
-            // 
-            // btn_log_in
-            // 
-            btn_log_in.Animated = true;
-            btn_log_in.AutoRoundedCorners = true;
-            btn_log_in.BackColor = Color.Transparent;
-            btn_log_in.BorderRadius = 22;
-            btn_log_in.CustomizableEdges = customizableEdges3;
-            btn_log_in.DisabledState.BorderColor = Color.DarkGray;
-            btn_log_in.DisabledState.CustomBorderColor = Color.DarkGray;
-            btn_log_in.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btn_log_in.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btn_log_in.FillColor = Color.FromArgb(114, 218, 251);
-            btn_log_in.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btn_log_in.ForeColor = Color.White;
-            btn_log_in.Location = new Point(61, 263);
-            btn_log_in.Name = "btn_log_in";
-            btn_log_in.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btn_log_in.Size = new Size(204, 47);
-            btn_log_in.TabIndex = 19;
-            btn_log_in.Text = "LOG IN";
             // 
             // Log_in
             // 

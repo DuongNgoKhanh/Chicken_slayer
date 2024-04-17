@@ -9,9 +9,36 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Resources\**" />
-    <EmbeddedResource Remove="Resources\**" />
-    <None Remove="Resources\**" />
+    <None Remove="Resources\.editorconfig" />
+    <None Remove="Resources\2836186-middle.png" />
+    <None Remove="Resources\28ab4e8a-71dc-46e5-b8dd-36b51b29f781 %281%29.png" />
+    <None Remove="Resources\4c156f75f066d1227f5710bed7d827b1.jpg" />
+    <None Remove="Resources\61264f6e-7412-4fe7-82d6-8483ee20fd26.png" />
+    <None Remove="Resources\8e477d4a0ab5aa8a76405e1f0fe656897d93426e.jpeg" />
+    <None Remove="Resources\acf8d97e43778fda97bd84da089772a5.jpg" />
+    <None Remove="Resources\aead1d41b10ee0ed267e513f21bcaffd.jpg" />
+    <None Remove="Resources\aead1d41b10ee0ed267e513f21bcaffd1.jpg" />
+    <None Remove="Resources\background1.jpg" />
+    <None Remove="Resources\background3.jpg" />
+    <None Remove="Resources\BigChickenCIU.webp" />
+    <None Remove="Resources\cdda017c-8898-4ff4-b8d3-9c0561db1c34.png" />
+    <None Remove="Resources\Chickenaut.PNG %281%29.webp" />
+    <None Remove="Resources\Chickenaut.PNG.webp" />
+    <None Remove="Resources\db3ca8dcc2ef0a6fcf629fb5c151dd20.jpg" />
+    <None Remove="Resources\de4e21f3-ce9e-4dd6-bbd9-8aeae8900cc1.png" />
+    <None Remove="Resources\images.png" />
+    <None Remove="Resources\images1.png" />
+    <None Remove="Resources\me.png" />
+    <None Remove="Resources\Phoenix_Chicken_.webp" />
+    <None Remove="Resources\PilotChicken.webp" />
+    <None Remove="Resources\poster1.png" />
+    <None Remove="Resources\poster2.png" />
+    <None Remove="Resources\poster4.jpg" />
+    <None Remove="Resources\poster5.png" />
+    <None Remove="Resources\poster6.png" />
+    <None Remove="Resources\red_chicken.png" />
+    <None Remove="Resources\SlobChicken.webp" />
+    <None Remove="Resources\yellow_chicken.jpeg" />
   </ItemGroup>
 
   <ItemGroup>
