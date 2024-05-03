@@ -62,11 +62,14 @@ namespace Chicken_slayer
 
         private void OpenNewForm()
         {
-            this.Hide(); 
-            Che_do_choi Vao_Game = new Che_do_choi();
-            Vao_Game.FormClosed += (s, args) => this.Close(); 
-            Vao_Game.Show();
-        }
+            //this.Hide();
+            //Che_do_choi Vao_Game = new Che_do_choi();
+            //Vao_Game.FormClosed += (s, args) => this.Close();
+            //Vao_Game.Show();
 
+            Che_do_choi choi = new Che_do_choi();
+            choi.Show(this);
+            this.Hide();
+        }
     }
 }

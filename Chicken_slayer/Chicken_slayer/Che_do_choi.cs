@@ -30,5 +30,13 @@ namespace Chicken_slayer
             waiting_Room.ShowDialog();
             this.Show();
         }
+
+        private void btn_choi_thuong_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Game game = new Game();
+            game.ShowDialog();
+            this.Show();
+        }
     }
 }

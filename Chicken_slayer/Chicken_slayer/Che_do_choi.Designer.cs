@@ -174,6 +174,7 @@
             btn_choi_thuong.TabIndex = 10;
             btn_choi_thuong.Text = "CHƠI THƯỜNG";
             btn_choi_thuong.TextFormatNoPrefix = true;
+            btn_choi_thuong.Click += btn_choi_thuong_Click;
             // 
             // guna2PictureBox3
             // 

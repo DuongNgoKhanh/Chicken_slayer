@@ -7,6 +7,9 @@
     <Compile Update="Che_do_choi.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Game.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Introduce.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -14,6 +17,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Log_in.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Piece.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Sign_up.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Waiting_room.cs">
