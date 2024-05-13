@@ -294,6 +294,16 @@ namespace Chicken_slayer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap noirlab2106c {
+            get {
+                object obj = ResourceManager.GetObject("noirlab2106c", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap red_chicken {
             get {
                 object obj = ResourceManager.GetObject("red_chicken", resourceCulture);
