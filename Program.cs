@@ -1,3 +1,5 @@
+using Chicken_slayer.Resources;
+
 namespace Chicken_slayer
 {
     internal static class Program
@@ -10,6 +12,7 @@ namespace Chicken_slayer
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
+            FirestoreHelper.SetEnvironmentVarible();
             ApplicationConfiguration.Initialize();
             Application.Run(new Introduce());
         }

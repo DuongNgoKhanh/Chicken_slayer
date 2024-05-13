@@ -29,22 +29,18 @@ namespace Chicken_slayer
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2ContainerControl1 = new Guna.UI2.WinForms.Guna2ContainerControl();
             guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
-            guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
             guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             btn_sign_up = new Guna.UI2.WinForms.Guna2Button();
@@ -59,19 +55,17 @@ namespace Chicken_slayer
             guna2ContainerControl1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             guna2ContainerControl1.BackColor = Color.FromArgb(255, 192, 128);
             guna2ContainerControl1.Controls.Add(guna2TextBox1);
-            guna2ContainerControl1.Controls.Add(guna2TextBox3);
-            guna2ContainerControl1.Controls.Add(guna2HtmlLabel2);
             guna2ContainerControl1.Controls.Add(guna2TextBox2);
             guna2ContainerControl1.Controls.Add(guna2HtmlLabel4);
             guna2ContainerControl1.Controls.Add(btn_sign_up);
             guna2ContainerControl1.Controls.Add(guna2HtmlLabel1);
             guna2ContainerControl1.Controls.Add(guna2HtmlLabel3);
-            guna2ContainerControl1.CustomizableEdges = customizableEdges9;
+            guna2ContainerControl1.CustomizableEdges = customizableEdges7;
             guna2ContainerControl1.Location = new Point(184, 34);
             guna2ContainerControl1.Margin = new Padding(2);
             guna2ContainerControl1.Name = "guna2ContainerControl1";
-            guna2ContainerControl1.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            guna2ContainerControl1.Size = new Size(274, 317);
+            guna2ContainerControl1.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            guna2ContainerControl1.Size = new Size(274, 291);
             guna2ContainerControl1.TabIndex = 19;
             guna2ContainerControl1.Text = "guna2ContainerControl1";
             // 
@@ -100,49 +94,12 @@ namespace Chicken_slayer
             guna2TextBox1.Size = new Size(191, 29);
             guna2TextBox1.TabIndex = 24;
             // 
-            // guna2TextBox3
-            // 
-            guna2TextBox3.AutoRoundedCorners = true;
-            guna2TextBox3.BackColor = Color.Transparent;
-            guna2TextBox3.BorderRadius = 13;
-            guna2TextBox3.CustomizableEdges = customizableEdges3;
-            guna2TextBox3.DefaultText = "";
-            guna2TextBox3.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            guna2TextBox3.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            guna2TextBox3.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox3.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox3.FillColor = Color.FromArgb(203, 242, 254);
-            guna2TextBox3.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox3.Font = new Font("Segoe UI", 9F);
-            guna2TextBox3.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox3.Location = new Point(49, 218);
-            guna2TextBox3.Margin = new Padding(3, 4, 3, 4);
-            guna2TextBox3.Name = "guna2TextBox3";
-            guna2TextBox3.PasswordChar = '\0';
-            guna2TextBox3.PlaceholderText = "";
-            guna2TextBox3.SelectedText = "";
-            guna2TextBox3.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2TextBox3.Size = new Size(191, 29);
-            guna2TextBox3.TabIndex = 23;
-            // 
-            // guna2HtmlLabel2
-            // 
-            guna2HtmlLabel2.BackColor = Color.Transparent;
-            guna2HtmlLabel2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            guna2HtmlLabel2.ForeColor = Color.FromArgb(114, 218, 251);
-            guna2HtmlLabel2.Location = new Point(22, 188);
-            guna2HtmlLabel2.Margin = new Padding(2);
-            guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            guna2HtmlLabel2.Size = new Size(140, 25);
-            guna2HtmlLabel2.TabIndex = 22;
-            guna2HtmlLabel2.Text = "Repeat password";
-            // 
             // guna2TextBox2
             // 
             guna2TextBox2.AutoRoundedCorners = true;
             guna2TextBox2.BackColor = Color.Transparent;
             guna2TextBox2.BorderRadius = 13;
-            guna2TextBox2.CustomizableEdges = customizableEdges5;
+            guna2TextBox2.CustomizableEdges = customizableEdges3;
             guna2TextBox2.DefaultText = "";
             guna2TextBox2.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             guna2TextBox2.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -155,12 +112,13 @@ namespace Chicken_slayer
             guna2TextBox2.Location = new Point(49, 154);
             guna2TextBox2.Margin = new Padding(3, 4, 3, 4);
             guna2TextBox2.Name = "guna2TextBox2";
-            guna2TextBox2.PasswordChar = '\0';
+            guna2TextBox2.PasswordChar = '●';
             guna2TextBox2.PlaceholderText = "";
             guna2TextBox2.SelectedText = "";
-            guna2TextBox2.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            guna2TextBox2.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2TextBox2.Size = new Size(191, 29);
             guna2TextBox2.TabIndex = 21;
+            guna2TextBox2.UseSystemPasswordChar = true;
             // 
             // guna2HtmlLabel4
             // 
@@ -180,7 +138,7 @@ namespace Chicken_slayer
             btn_sign_up.AutoRoundedCorners = true;
             btn_sign_up.BackColor = Color.Transparent;
             btn_sign_up.BorderRadius = 18;
-            btn_sign_up.CustomizableEdges = customizableEdges7;
+            btn_sign_up.CustomizableEdges = customizableEdges5;
             btn_sign_up.DisabledState.BorderColor = Color.DarkGray;
             btn_sign_up.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_sign_up.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -188,10 +146,10 @@ namespace Chicken_slayer
             btn_sign_up.FillColor = Color.FromArgb(114, 218, 251);
             btn_sign_up.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btn_sign_up.ForeColor = Color.White;
-            btn_sign_up.Location = new Point(49, 266);
+            btn_sign_up.Location = new Point(49, 217);
             btn_sign_up.Margin = new Padding(2);
             btn_sign_up.Name = "btn_sign_up";
-            btn_sign_up.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btn_sign_up.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btn_sign_up.Size = new Size(191, 38);
             btn_sign_up.TabIndex = 19;
             btn_sign_up.Text = "SIGN UP";
@@ -226,7 +184,7 @@ namespace Chicken_slayer
             btn_back.Animated = true;
             btn_back.BackColor = Color.Transparent;
             btn_back.BorderRadius = 22;
-            btn_back.CustomizableEdges = customizableEdges11;
+            btn_back.CustomizableEdges = customizableEdges9;
             btn_back.DisabledState.BorderColor = Color.DarkGray;
             btn_back.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_back.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -238,11 +196,10 @@ namespace Chicken_slayer
             btn_back.Location = new Point(-11, -6);
             btn_back.Margin = new Padding(2);
             btn_back.Name = "btn_back";
-            btn_back.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btn_back.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btn_back.Size = new Size(102, 36);
             btn_back.TabIndex = 20;
             btn_back.TextFormatNoPrefix = true;
-            btn_back.Click += btn_back_Click;
             // 
             // Sign_up
             // 
@@ -271,8 +228,6 @@ namespace Chicken_slayer
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2Button btn_back;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
     }
 }

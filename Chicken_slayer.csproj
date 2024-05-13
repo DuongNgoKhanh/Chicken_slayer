@@ -44,7 +44,8 @@
   <ItemGroup>
     <PackageReference Include="Firebase.Database" Version="1.0.0" />
     <PackageReference Include="FirebaseAdmin" Version="2.4.1" />
-    <PackageReference Include="Google.Cloud.Firestore" Version="3.6.0" />
+    <PackageReference Include="Google.Cloud.Firestore" Version="3.7.0" />
+    <PackageReference Include="Google.Cloud.Firestore.V1" Version="3.7.0" />
     <PackageReference Include="Guna.UI2.WinForms" Version="2.0.4.6" />
   </ItemGroup>
 

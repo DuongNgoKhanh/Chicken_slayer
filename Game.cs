@@ -295,6 +295,9 @@ namespace Chicken_slayer
             Controls.Add(egg);
         }
 
+        private void Game_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }

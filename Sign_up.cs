@@ -1,4 +1,6 @@
-﻿using Google.Cloud.Firestore;
+﻿using Chicken_slayer.Resources;
+using Google.Cloud.Firestore;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,69 +17,54 @@ namespace Chicken_slayer
 {
     public partial class Sign_up : Form
     {
-        private FirestoreDb db;
+        private FirestoreDb _db;
         public Sign_up()
         {
             InitializeComponent();
-            Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", "D:\\New folder\\leaderboard-935a2-firebase-adminsdk-96hw7-da1c87d419.json");
-            db = FirestoreDb.Create("leaderboard-935a2");
         }
 
-        private async void btn_sign_up_Click(object sender, EventArgs e)
+
+
+        private UserData GetWriteData()
         {
-            string username = guna2TextBox1.Text;
+            
+            string username = guna2TextBox1.Text.Trim();
+            string password = Security.Encrypt(guna2TextBox2.Text);
+
+            return new UserData()
+            {
+                Username = username,
+                Password = password
+            };
+        }
+        private bool CheckIfUserAlreadyExist()
+        {
+            string username = guna2TextBox1.Text.Trim();
             string password = guna2TextBox2.Text;
-            string confirmPassword = guna2TextBox3.Text;
-            bool isUsernameExists = await IsUsernameExists(username);
 
-            if (isUsernameExists)
+            var db = FirestoreHelper.Database;
+            DocumentReference docRef = db.Collection("UserData").Document(username);
+            UserData data = docRef.GetSnapshotAsync().Result.ConvertTo<UserData>();
+            if (data != null)
             {
-                MessageBox.Show("Username already exists.");
-                return;
-            }
-            await CreateAccount(username, password);
-            MessageBox.Show("Account created successfully.");
-        }
-
-
-        private async Task<bool> IsUsernameExists(string username)
-        {
-            try
-            {
-
-                DocumentReference docRef = db.Collection("Tài khoản").Document(username);
-                DocumentSnapshot snapshot = await docRef.GetSnapshotAsync();
-                return snapshot.Exists;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error checking username: {ex.Message}");
                 return true;
             }
+            return false;
         }
 
-        private async Task CreateAccount(string username, string password)
-        {
-            try
-            {
-                DocumentReference docRef = db.Collection("Tài khoản").Document(username);
-                Dictionary<string, object> data = new Dictionary<string, object>
-                {
-                    { "password", password }
-                };
-                await docRef.SetAsync(data);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error creating account: {ex.Message}");
-            }
-        }
 
-        private void btn_back_Click(object sender, EventArgs e)
+        private void btn_sign_up_Click(object sender, EventArgs e)
         {
-            Log_in dangnhap = new Log_in();
-            dangnhap.Show();
-            this.Close();
+            var db = FirestoreHelper.Database;
+            if (CheckIfUserAlreadyExist()== true)
+            {
+                MessageBox.Show("User already exist.");
+                return;
+            }
+            var data = GetWriteData();
+            DocumentReference docRef = db.Collection("UserData").Document(data.Username);
+            docRef.SetAsync(data);
+            MessageBox.Show("Success.");
         }
     }
 }

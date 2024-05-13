@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Chicken_slayer.Resources;
 using Google.Cloud.Firestore;
 using Microsoft.VisualBasic.ApplicationServices;
 using static System.Windows.Forms.DataFormats;
@@ -15,83 +16,44 @@ namespace Chicken_slayer
 {
     public partial class Log_in : Form
     {
-        private FirestoreDb db;
+        private FirestoreDb _db;
+
         public Log_in()
         {
             InitializeComponent();
-            Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", "D:\\New folder\\leaderboard-935a2-firebase-adminsdk-96hw7-da1c87d419.json"); //tải file json đổi đường dẫn thành đường dẫn file tải về
-            db = FirestoreDb.Create("leaderboard-935a2");
         }
 
-
-        private  void btn_back_Click(object sender, EventArgs e)
+        private void btn_log_in_Click(object sender, EventArgs e)
         {
-            Menu back = new Menu();
-            back.Show();
-            this.Close();
-        }
-
-        private void Log_in_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private async void btn_log_in_Click(object sender, EventArgs e)
-        {
-            string username = guna2TextBox1.Text;
+            string username = guna2TextBox1.Text.Trim();
             string password = guna2TextBox2.Text;
 
-            // Kiểm tra đăng nhập
-            bool isLoginSuccessful = await Login(username, password);
-
-            if (isLoginSuccessful)
+            var db = FirestoreHelper.Database;
+            DocumentReference docRef = db.Collection("UserData").Document(username);
+            UserData data = docRef.GetSnapshotAsync().Result.ConvertTo<UserData>();
+            if (data != null)
             {
-                MessageBox.Show("Đăng nhập thành công.");
-                OpenNewForm();
-            }
-            else
-            {
-                MessageBox.Show("Người dùng hoặc mật khẩu không chính xác.");
-            }
-        }
-        private async Task<bool> Login(string username, string password)
-        {
-            try
-            {
-                DocumentReference docRef = db.Collection("Tài khoản").Document(username);
-                DocumentSnapshot snapshot = await docRef.GetSnapshotAsync();
-                if (snapshot.Exists)
+                if (password == Security.Decrypt(data.Password))
                 {
-                    string actualPassword = snapshot.GetValue<string>("password");
-                    return actualPassword == password;
+                    MessageBox.Show("Success.");
                 }
                 else
                 {
-                    return false;
+                    MessageBox.Show("Failed.");
                 }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show($"Lỗi đăng nhập: {ex.Message}");
-                return false;
+                MessageBox.Show("Login failed.");
             }
         }
 
-        private void OpenNewForm()
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //this.Hide();
-            //Che_do_choi Vao_Game = new Che_do_choi();
-            //Vao_Game.FormClosed += (s, args) => this.Close();
-            //Vao_Game.Show();
-
-            Che_do_choi choi = new Che_do_choi();
-            choi.Show(this);
-            this.Hide();
-        }
-
-        private void Log_in_Load_1(object sender, EventArgs e)
-        {
-
+            Hide();
+            Sign_up dangki = new Sign_up();
+            dangki.Show();
+            Close();
         }
     }
 }

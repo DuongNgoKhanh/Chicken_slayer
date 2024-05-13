@@ -17,10 +17,9 @@
 
         private void btn_dang_nhap_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Log_in sign_in = new Log_in();
-            sign_in.ShowDialog();
-            this.Show();
+            sign_in.Show();
+            this.Close();
         }
 
         private void btn_xep_hang_Click(object sender, EventArgs e)

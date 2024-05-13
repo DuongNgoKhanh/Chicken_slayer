@@ -42,7 +42,7 @@
             label1.ForeColor = SystemColors.ActiveCaptionText;
             label1.Location = new Point(1, 9);
             label1.Name = "label1";
-            label1.Size = new Size(150, 31);
+            label1.Size = new Size(124, 27);
             label1.TabIndex = 5;
             label1.Text = "Score: 0";
             // 
@@ -65,9 +65,8 @@
             // 
             // Game
             // 
-            AutoScaleDimensions = new SizeF(17F, 31F);
+            AutoScaleDimensions = new SizeF(14F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            //BackgroundImage = Properties.Resources.background1;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1200, 700);
             Controls.Add(label1);
@@ -77,6 +76,7 @@
             Name = "Game";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Game";
+            Load += Game_Load;
             KeyDown += Game_KeyDown;
             KeyUp += Game_KeyUp;
             ResumeLayout(false);
