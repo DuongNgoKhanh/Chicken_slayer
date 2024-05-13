@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Jvj/LIW9assDqFBCyArq9dK8+u7fvooDVHU5DNQ1oyg2rqTrvHXMkvjV8GjDE03WYKaoyMgxLT6bX6OqK6bSGg==",
+  "dgSpecHash": "o2Yz8wRxl7FD0KeGuRUFFY6QbQMRgvH3UxYfBhAv28XffNrIJsYDorEIDAEv2T1Q2wWda498Jl/vrldrS2V4mg==",
   "success": true,
   "projectFilePath": "D:\\HOCTAP\\laptrinhmang\\Chicken_slayer-main\\Chicken_slayer\\Chicken_slayer\\Chicken_slayer.csproj",
   "expectedPackageFiles": [
@@ -13,8 +13,8 @@
     "C:\\Users\\Admin\\.nuget\\packages\\google.apis\\1.67.0\\google.apis.1.67.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\google.apis.auth\\1.67.0\\google.apis.auth.1.67.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\google.apis.core\\1.67.0\\google.apis.core.1.67.0.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\google.cloud.firestore\\3.6.0\\google.cloud.firestore.3.6.0.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\google.cloud.firestore.v1\\3.6.0\\google.cloud.firestore.v1.3.6.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\google.cloud.firestore\\3.7.0\\google.cloud.firestore.3.7.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\google.cloud.firestore.v1\\3.7.0\\google.cloud.firestore.v1.3.7.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\google.cloud.location\\2.2.0\\google.cloud.location.2.2.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\google.longrunning\\3.2.0\\google.longrunning.3.2.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\google.protobuf\\3.25.0\\google.protobuf.3.25.0.nupkg.sha512",

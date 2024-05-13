@@ -60,7 +60,11 @@
             },
             "Google.Cloud.Firestore": {
               "target": "Package",
-              "version": "[3.6.0, )"
+              "version": "[3.7.0, )"
+            },
+            "Google.Cloud.Firestore.V1": {
+              "target": "Package",
+              "version": "[3.7.0, )"
             },
             "Guna.UI2.WinForms": {
               "target": "Package",

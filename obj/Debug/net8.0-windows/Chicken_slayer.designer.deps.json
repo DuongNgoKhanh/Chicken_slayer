@@ -118,20 +118,20 @@
           }
         }
       },
-      "Google.Cloud.Firestore/3.6.0": {
+      "Google.Cloud.Firestore/3.7.0": {
         "dependencies": {
-          "Google.Cloud.Firestore.V1": "3.6.0",
+          "Google.Cloud.Firestore.V1": "3.7.0",
           "System.Collections.Immutable": "6.0.0",
           "System.Linq.Async": "6.0.1"
         },
         "runtime": {
           "lib/netstandard2.0/Google.Cloud.Firestore.dll": {
-            "assemblyVersion": "3.6.0.0",
-            "fileVersion": "3.6.0.0"
+            "assemblyVersion": "3.7.0.0",
+            "fileVersion": "3.7.0.0"
           }
         }
       },
-      "Google.Cloud.Firestore.V1/3.6.0": {
+      "Google.Cloud.Firestore.V1/3.7.0": {
         "dependencies": {
           "Google.Api.Gax.Grpc": "4.8.0",
           "Google.Cloud.Location": "2.2.0",
@@ -139,8 +139,8 @@
         },
         "runtime": {
           "lib/netstandard2.0/Google.Cloud.Firestore.V1.dll": {
-            "assemblyVersion": "3.6.0.0",
-            "fileVersion": "3.6.0.0"
+            "assemblyVersion": "3.7.0.0",
+            "fileVersion": "3.7.0.0"
           }
         }
       },
@@ -434,19 +434,19 @@
       "path": "google.apis.core/1.67.0",
       "hashPath": "google.apis.core.1.67.0.nupkg.sha512"
     },
-    "Google.Cloud.Firestore/3.6.0": {
+    "Google.Cloud.Firestore/3.7.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-p1G/ih6Sr11Vua2rGQZSGnf/6Ygq5GcuSGSCEkXT9PV6LAxaHXnBlflOyfpf76br9Fa7UE8kWKvxhgUDh7iB6Q==",
-      "path": "google.cloud.firestore/3.6.0",
-      "hashPath": "google.cloud.firestore.3.6.0.nupkg.sha512"
+      "sha512": "sha512-32gFGV7nDsjAm0dRZXFEAkZFmIJDhdQK76KUvby6AhnaokiK001uWRAIIDeghALrr0wxQNhcCNxPg2Gk9iU6LQ==",
+      "path": "google.cloud.firestore/3.7.0",
+      "hashPath": "google.cloud.firestore.3.7.0.nupkg.sha512"
     },
-    "Google.Cloud.Firestore.V1/3.6.0": {
+    "Google.Cloud.Firestore.V1/3.7.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-wo3F3qNTkWzqpUjoRUoHi5I38QcTLGJ8r9Cj6VwbK8RF4+y/F8Td/tHyir4Mky0DG6h9agJvdvEU1Q2BgaSYJw==",
-      "path": "google.cloud.firestore.v1/3.6.0",
-      "hashPath": "google.cloud.firestore.v1.3.6.0.nupkg.sha512"
+      "sha512": "sha512-BOF6p/rEkp5g+mW2ZsVOsd8m3Zarqfob2XgxbRQg33NxKI2pZ8xbpSY743rQ05t174UmdTXM9dAS8i/OhM3Ajw==",
+      "path": "google.cloud.firestore.v1/3.7.0",
+      "hashPath": "google.cloud.firestore.v1.3.7.0.nupkg.sha512"
     },
     "Google.Cloud.Location/2.2.0": {
       "type": "package",
