@@ -27,7 +27,7 @@ namespace Chicken_slayer
 
         private UserData GetWriteData()
         {
-            
+
             string username = guna2TextBox1.Text.Trim();
             string password = Security.Encrypt(guna2TextBox2.Text);
 
@@ -56,7 +56,7 @@ namespace Chicken_slayer
         private void btn_sign_up_Click(object sender, EventArgs e)
         {
             var db = FirestoreHelper.Database;
-            if (CheckIfUserAlreadyExist()== true)
+            if (CheckIfUserAlreadyExist() == true)
             {
                 MessageBox.Show("User already exist.");
                 return;
@@ -65,6 +65,13 @@ namespace Chicken_slayer
             DocumentReference docRef = db.Collection("UserData").Document(data.Username);
             docRef.SetAsync(data);
             MessageBox.Show("Success.");
+        }
+
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Log_in log_In = new Log_in();
+            log_In.Show();
         }
     }
 }

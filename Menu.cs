@@ -11,24 +11,21 @@
         {
             this.Hide();
             Che_do_choi che_Do_Choi = new Che_do_choi();
-            che_Do_Choi.ShowDialog();
-            this.Show();
+            che_Do_Choi.Show();
         }
 
         private void btn_dang_nhap_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Log_in sign_in = new Log_in();
             sign_in.Show();
-            this.Close();
         }
 
         private void btn_xep_hang_Click(object sender, EventArgs e)
         {
             this.Hide();
             BXH bXH = new BXH();
-            bXH.ShowDialog();
-            this.Show();
-
+            bXH.Show();
         }
 
     }

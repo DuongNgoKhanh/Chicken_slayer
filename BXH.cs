@@ -7,52 +7,57 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
+using Chicken_slayer.Resources;
 using Google.Cloud.Firestore;
 
 namespace Chicken_slayer
 {
-    
+
     public partial class BXH : Form
     {
-        private FirestoreDb db;
+        FirestoreDb database;
         public BXH()
         {
             InitializeComponent();
-            Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", "D:\\New folder\\leaderboard-935a2-firebase-adminsdk-96hw7-da1c87d419.json");
-            db = FirestoreDb.Create("leaderboard-935a2");
+            this.Load += new EventHandler(BXH_Load);
         }
 
-        private async void BXH_Load(object sender, EventArgs e)
+        private void BXH_Load(object sender, EventArgs e)
         {
-            await LoadBXH();
+                string path = AppDomain.CurrentDomain.BaseDirectory + @"cloudfire.json";
+                Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
+                database = FirestoreDb.Create("leaderboard-935a2");
         }
-
 
 
         private void btn_back_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
         }
-        private async Task LoadBXH()
+        async void TaiLenBXH(string nameofCollection)
         {
-            try
+            Query BXH = database.Collection(nameofCollection);
+            QuerySnapshot snap = await BXH.GetSnapshotAsync();
+
+            foreach (DocumentSnapshot docsnap in snap.Documents)
             {
-                QuerySnapshot querySnapshot = await db.Collection("BXH").GetSnapshotAsync();
-                guna2DataGridView1.Rows.Clear();
-                foreach (DocumentSnapshot documentSnapshot in querySnapshot.Documents)
+                BXHstruct bxh = docsnap.ConvertTo<BXHstruct>();
+                if (docsnap.Exists)
                 {
-                    if (documentSnapshot.Exists)
-                    {
-                        string name = documentSnapshot.GetValue<string>("Name");
-                        int score = documentSnapshot.GetValue<int>("Score");
-                        guna2DataGridView1.Rows.Add(name, score);
-                    }
+                    guna2DataGridView1.Rows.Add(docsnap.Id, bxh.SCORE);
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error loading BXH: {ex.Message}");
-            }
+        }
+
+        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btn_choi_ngay_Click(object sender, EventArgs e)
+        {
+            TaiLenBXH("BXH");
         }
     }
 }

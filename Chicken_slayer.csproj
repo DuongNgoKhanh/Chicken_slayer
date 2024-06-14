@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="leaderboard-935a2-firebase-adminsdk-96hw7-699268e2f1.json" />
     <None Remove="Resources\.editorconfig" />
     <None Remove="Resources\2836186-middle.png" />
     <None Remove="Resources\28ab4e8a-71dc-46e5-b8dd-36b51b29f781 %281%29.png" />
@@ -39,6 +40,12 @@
     <None Remove="Resources\red_chicken.png" />
     <None Remove="Resources\SlobChicken.webp" />
     <None Remove="Resources\yellow_chicken.jpeg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="leaderboard-935a2-firebase-adminsdk-96hw7-699268e2f1.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>

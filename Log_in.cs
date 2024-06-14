@@ -35,7 +35,10 @@ namespace Chicken_slayer
             {
                 if (password == Security.Decrypt(data.Password))
                 {
-                    MessageBox.Show("Success.");
+                    this.Hide();
+                    Che_do_choi newForm = new Che_do_choi();
+                    newForm.Show();
+
                 }
                 else
                 {

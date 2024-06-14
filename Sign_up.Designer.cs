@@ -200,6 +200,7 @@ namespace Chicken_slayer
             btn_back.Size = new Size(102, 36);
             btn_back.TabIndex = 20;
             btn_back.TextFormatNoPrefix = true;
+            btn_back.Click += btn_back_Click;
             // 
             // Sign_up
             // 

@@ -1,17 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.DirectoryServices.ActiveDirectory;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Chicken_slayer
 {
-    public partial class Game : Form
+    public partial class GameOnline : Form
     {
         Piece _rocket;
 
@@ -29,11 +23,16 @@ namespace Chicken_slayer
         int count = 0;
         int dt = 1;
 
-
         //heart
         List<Piece> _liveHeart = new List<Piece>();
         int live = 3;
-        int score = 0;
+        int score1 = 0;
+        int score2 = 0;
+        bool isPlayer1Turn = true;
+
+        //labels for scores
+        Label labelPlayer1Score;
+        Label labelPlayer2Score;
 
         //eggs
         Bitmap _mainBrokenEgg = Properties.Resources.eggBreak;
@@ -42,7 +41,7 @@ namespace Chicken_slayer
 
         Random rand = new Random();
 
-        public Game()
+        public GameOnline()
         {
             InitializeComponent();
             initial();
@@ -56,6 +55,18 @@ namespace Chicken_slayer
             _rocket.Image = Properties.Resources.spaceship4;
             Controls.Add(_rocket);
 
+            // Initialize labels for scores
+            labelPlayer1Score = new Label();
+            labelPlayer1Score.Text = "Player 1 Score: 0";
+            labelPlayer1Score.Location = new Point(10, 10);
+            labelPlayer1Score.AutoSize = true;
+            Controls.Add(labelPlayer1Score);
+
+            labelPlayer2Score = new Label();
+            labelPlayer2Score.Text = "Player 2 Score: 0";
+            labelPlayer2Score.Location = new Point(10, 30);
+            labelPlayer2Score.AutoSize = true;
+            Controls.Add(labelPlayer2Score);
 
             divideImageIntoFrames(_mainChickenImage, _chickenFrame, 10);
             createChickens();
@@ -138,7 +149,7 @@ namespace Chicken_slayer
             }
 
             collision();
-            if (score == 240) endGame(Properties.Resources.win);
+            if (score1 == 240 || score2 == 240) endGame();
         }
 
         private void collision()
@@ -169,11 +180,18 @@ namespace Chicken_slayer
                         _bullets.RemoveAt(ans);
                         Controls.Remove(_chickens[i, j]);
                         _chickens[i, j] = null;
-                        score += 10;
-                        label1.Text = "Score: " + score.ToString();
+                        if (isPlayer1Turn)
+                        {
+                            score1 += 10;
+                            labelPlayer1Score.Text = "Player 1 Score: " + score1.ToString();
+                        }
+                        else
+                        {
+                            score2 += 10;
+                            labelPlayer2Score.Text = "Player 2 Score: " + score2.ToString();
+                        }
                     }
                 }
-
             }
         }
 
@@ -218,7 +236,6 @@ namespace Chicken_slayer
             for (int i = 0; i < _eggs.Count; i++)
             {
                 _eggs[i].Top += _eggs[i].eggDownSpeed;
-
                 if (_rocket.Bounds.IntersectsWith(_eggs[i].Bounds))
                 {
                     Controls.Remove(_eggs[i]);
@@ -249,34 +266,45 @@ namespace Chicken_slayer
         {
             live--;
             _liveHeart[live].Image = Properties.Resources.d_heart;
-            if (live == 0) endGame(Properties.Resources.lose);
+            if (live == 0) endGame();
         }
 
-        private void endGame(Bitmap img)
+        private void endGame()
         {
             eggsTm.Stop();
             bulletTm.Stop();
             chickenTm.Stop();
             Controls.Clear();
-            Piece pic = new Piece(100, 100);
-            pic.Click += cls;
-            pic.Image = img;
-            pic.Left = Width / 2 - pic.Width / 2;
-            pic.Top = Height / 2 - pic.Height / 2;
-            Controls.Add(pic);
-            ShowScoreForm();
-        }
+            string resultMessage;
 
-        private void ShowScoreForm()
-        {
-            BXHsaving scoreForm = new BXHsaving();
-            scoreForm.SetScore(score);
-            scoreForm.Show();
-        }
+            if (score1 > score2)
+            {
+                resultMessage = "Player 1 Wins!";
+            }
+            else if (score2 > score1)
+            {
+                resultMessage = "Player 2 Wins!";
+            }
+            else
+            {
+                resultMessage = "It's a Tie!";
+            }
 
-        private void cls(object sender, EventArgs e)
-        {
-            Close();
+            Label resultLabel = new Label();
+            resultLabel.Text = resultMessage;
+            resultLabel.Font = new Font("Arial", 24, FontStyle.Bold);
+            resultLabel.AutoSize = true;
+            resultLabel.Left = Width / 2 - resultLabel.Width / 2;
+            resultLabel.Top = Height / 2 - resultLabel.Height / 2;
+            Controls.Add(resultLabel);
+
+            Button closeButton = new Button();
+            closeButton.Text = "Close";
+            closeButton.AutoSize = true;
+            closeButton.Left = Width / 2 - closeButton.Width / 2;
+            closeButton.Top = resultLabel.Top + resultLabel.Height + 20;
+            closeButton.Click += (sender, e) => { Close(); };
+            Controls.Add(closeButton);
         }
 
         private void launchRandomEgg()
@@ -302,6 +330,9 @@ namespace Chicken_slayer
 
         }
 
+        private void GameOnline_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }

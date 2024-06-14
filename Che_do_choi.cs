@@ -12,6 +12,7 @@ namespace Chicken_slayer
 {
     public partial class Che_do_choi : Form
     {
+        private RoomManager roomManager = new RoomManager();
         public Che_do_choi()
         {
             InitializeComponent();
@@ -26,7 +27,7 @@ namespace Chicken_slayer
         private void btn_doi_khang_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Waiting_room waiting_Room = new Waiting_room();
+            Lobby waiting_Room = new Lobby();
             waiting_Room.ShowDialog();
             this.Show();
         }
@@ -35,8 +36,7 @@ namespace Chicken_slayer
         {
             this.Hide();
             Game game = new Game();
-            game.ShowDialog();
-            this.Show();
+            game.Show();
         }
     }
 }
