@@ -97,3 +97,7 @@ D:\HOCTAP\laptrinhmang\Chicken_slayer-main\Chicken_slayer\Chicken_slayer\obj\Deb
 D:\HOCTAP\laptrinhmang\Chicken_slayer-main\Chicken_slayer\Chicken_slayer\obj\Debug\net8.0-windows\Chicken_slayer.pdb
 D:\HOCTAP\laptrinhmang\Chicken_slayer-main\Chicken_slayer\Chicken_slayer\obj\Debug\net8.0-windows\Chicken_slayer.genruntimeconfig.cache
 D:\HOCTAP\laptrinhmang\Chicken_slayer-main\Chicken_slayer\Chicken_slayer\obj\Debug\net8.0-windows\ref\Chicken_slayer.dll
+D:\HOCTAP\laptrinhmang\Chicken_slayer-main\Chicken_slayer\Chicken_slayer\obj\Debug\net8.0-windows\Chicken_slayer.Lobby.resources
+D:\HOCTAP\laptrinhmang\Chicken_slayer-main\Chicken_slayer\Chicken_slayer\obj\Debug\net8.0-windows\Chicken_slayer.GameOnline.resources
+D:\HOCTAP\laptrinhmang\Chicken_slayer-main\Chicken_slayer\Chicken_slayer\bin\Debug\net8.0-windows\leaderboard-935a2-firebase-adminsdk-96hw7-699268e2f1.json
+D:\HOCTAP\laptrinhmang\Chicken_slayer-main\Chicken_slayer\Chicken_slayer\obj\Debug\net8.0-windows\Chicken_slayer.BXHsaving.resources
