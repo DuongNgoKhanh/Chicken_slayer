@@ -1,4 +1,6 @@
 ﻿using System.Diagnostics;
+using System.Windows.Forms;
+using offline;
 
 namespace offline
 {
@@ -22,7 +24,6 @@ namespace offline
         public List<Piece> Eggs { get; set; }
         public bool newEgg { get; set; } = false;
 
-
         // Hearts and Lives
         public List<Piece> _liveHearts;
         public int Lives { get; private set; } = 3;
@@ -45,6 +46,7 @@ namespace offline
         // Bullet speed
         public const int BulletSpeed = 10;
 
+         
         public Game()
         {
             Bullets = new List<Piece>();
@@ -263,16 +265,12 @@ namespace offline
         public void DecreaseLive()
         {
             Lives--;
-            _liveHearts[Lives].Image = Properties.Resources.d_heart;
-            if (Lives == 0)
-            {
-                EndGame(Properties.Resources.lose);
-            }
+            _liveHearts[Lives].Image = Properties.Resources.d_heart;            
         }
 
-        public void EndGame(Bitmap endGameImage)
+        public bool HasLivesLeft()
         {
-            // Implement end game logic here, e.g., show game over screen
+            return Lives > 0;
         }
 
         private Piece LaunchRandomEgg()
@@ -409,6 +407,9 @@ namespace offline
 
         public void EndGame(Bitmap img, Form form)
         {
+            //clear
+            form.Controls.Clear();
+
             // Tạo và cấu hình hình ảnh kết thúc trò chơi
             Piece endGameImage = new Piece(100, 100)
             {
@@ -448,6 +449,8 @@ namespace offline
         public List<Position> Chickens { get; set; }
         public List<Position> Eggs { get; set; }
         public int Lives { get; set; }
+        public bool GameOver { get; set; }
+        public bool IsWinner { get; set; } 
     }
 
     public class Position

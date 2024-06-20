@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Net.Sockets;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,6 +16,8 @@ namespace offline
         Game myGame;
         Game enemyGame;
         bool newBullet = false;
+        bool gameOver = false;
+        bool isWinner = false;
         public Client()
         {
             InitializeComponent();
@@ -38,7 +41,7 @@ namespace offline
             MessageBox.Show("Waiting for opponent...", "Waiting", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void SendGameState()
+        public void SendGameState()
         {
 
             GameState gameState = new GameState
@@ -47,7 +50,9 @@ namespace offline
                 Bullets = new List<Position>(),
                 Chickens = new List<Position>(),
                 Eggs = new List<Position>(),
-                Lives = myGame.Lives
+                Lives = myGame.Lives,
+                GameOver = gameOver,
+                IsWinner = isWinner
             };
 
             //Bullet
@@ -97,7 +102,23 @@ namespace offline
 
                 this.Invoke(new Action(() =>
                 {
-                    UpdateEnemyGameState(gameState);
+                    if (gameState.GameOver)
+                    {
+                        if (gameState.IsWinner)
+                        {
+                            myGame.EndGame(Properties.Resources.win, this);
+                           
+                        }
+                        else
+                        {
+                            myGame.EndGame(Properties.Resources.lose, this);
+                        }
+                        stopTimer();
+                    }
+                    else
+                    {
+                        UpdateEnemyGameState(gameState);
+                    }
                 }));
             }
         }
@@ -105,7 +126,6 @@ namespace offline
         private void UpdateEnemyGameState(GameState gameState)
         {
             enemyGame.UpdateGameState(gameState, enemy_panel);
-            
         }
 
         private void Game_KeyDown(object sender, KeyEventArgs e)
@@ -137,7 +157,6 @@ namespace offline
                     break;
             }
             
-
             if (stateChanged)
             {
                 SendGameState();
@@ -159,6 +178,15 @@ namespace offline
         {
             myGame.UpdateEggState(my_panel);
             enemyGame.UpdateEggState(enemy_panel);
+            if (!myGame.HasLivesLeft())
+            {
+                // Thực hiện các hành động khi người chơi thua
+                gameOver = true;
+                isWinner = true;
+                SendGameState();
+                stopTimer();
+                myGame.EndGame(Properties.Resources.lose, this);
+            }
         }
 
         private void bulletTm_Tick(object sender, EventArgs e)
@@ -170,25 +198,28 @@ namespace offline
 
         private void endGame()
         {
-            bulletTm.Stop();
-            eggsTm.Stop();
-            chickenTm.Stop();
-
-            Controls.Clear();
-
+            stopTimer();
+            //chuẩn bị 
             Bitmap win = Properties.Resources.win;
             Bitmap lose = Properties.Resources.lose;
             int score1 = int.Parse(label1.Text.Split(" ")[1]);
             int score2 = int.Parse(label2.Text.Split(" ")[1]);
 
-            if (score1 > score2)
-            {
-                myGame.EndGame(win, this);
-            }
-            else
-            {
-                myGame.EndGame(lose, this);
-            }
+            bool isWinner = score1 > score2;
+            myGame.EndGame(isWinner ? win : lose, this);
+
+            // Send game over message
+            gameOver = true;
+            //isWinner = true;
+            SendGameState();
         }
+        private void stopTimer()
+        {
+            //dừng các timer lại
+            bulletTm.Stop();
+            eggsTm.Stop();
+            chickenTm.Stop();
+        }
+
     }
 }
