@@ -1,4 +1,6 @@
-﻿namespace offline
+﻿using System.Diagnostics;
+
+namespace offline
 {
     public class Game
     {
@@ -18,7 +20,7 @@
         public List<Piece> _eggs;
         public List<Bitmap> _brokenEggFrames;
         public List<Piece> Eggs { get; set; }
-        public bool newEgg = false;
+        public bool newEgg { get; set; } = false;
 
 
         // Hearts and Lives
@@ -164,6 +166,8 @@
             UpdateBullets(gameState, panel);
             RemoveNullChickens(gameState, panel);
             UpdateEggsPosition(gameState, panel);
+            //AddEgg(gameState.NewEgg, panel);
+            UpdateLives(gameState);
         }
 
         public void UpdateRocketPosition(GameState gameState)
@@ -247,9 +251,15 @@
                     Top = eggState.Y,
                     Image = Properties.Resources.egg
                 };
-                Eggs.Add(egg);
+                _eggs.Add(egg);
                 panel.Controls.Add(egg);
             }
+        }
+
+        public void UpdateLives(GameState gameState)
+        {
+            if (Lives > gameState.Lives)
+                DecreaseLive();
         }
         public void DecreaseLive()
         {
@@ -261,13 +271,31 @@
             }
         }
 
+        public void AddEgg(Position eggPosition, Panel panel)
+        {
+            if(eggPosition != null)
+            {
+                Piece newEgg = new Piece(20, 20)
+                {
+                    Left = eggPosition.X,
+                    Top = eggPosition.Y,
+                    Image = Properties.Resources.egg
+                };
+
+                _eggs.Add(newEgg);
+                panel.Controls.Add(newEgg);
+            }
+        // Debug output
+             //MessageBox.Show("Egg added at: " + eggPosition.X + ", " + eggPosition.Y);
+        }
+
         public void EndGame(Bitmap endGameImage)
         {
             // Implement end game logic here, e.g., show game over screen
         }
         
 
-        public Piece LaunchRandomEgg()
+        private Piece LaunchRandomEgg()
         {
             List<Piece> availableChickens = new List<Piece>();
             for (int i = 0; i < _chickenRows; i++)
@@ -289,6 +317,7 @@
                 Top = chicken.Top + chicken.Height
             };
             _eggs.Add(egg);
+            newEgg = true;
             return egg;
         }
 
@@ -358,10 +387,10 @@
             int panelHeight = panel.Height;
 
             
-            if (_rand.Next(200) == 5 && !(panel.Name == "enemy_panel"))
+            if (_rand.Next(200) == 5 && (panel.Name != "enemy_panel"))
             {
                 panel.Controls.Add(LaunchRandomEgg());
-                newEgg = true;
+                //newEgg = true;
             }
 
             for (int i = 0; i < _eggs.Count; i++)
@@ -441,7 +470,8 @@
         public List<Position> Bullets { get; set; }
         public List<Position> Chickens { get; set; }
         public List<Position> Eggs { get; set; }
-        public int liveHeart {  get; set; }
+        public int Lives { get; set; }
+        public Position NewEgg { get; set; }  // Thêm thuộc tính này
     }
 
     public class Position

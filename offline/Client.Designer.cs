@@ -43,9 +43,9 @@
             label1.AutoSize = true;
             label1.Location = new Point(28, 9);
             label1.Name = "label1";
-            label1.Size = new Size(95, 25);
+            label1.Size = new Size(75, 25);
             label1.TabIndex = 0;
-            label1.Text = "Score: 100";
+            label1.Text = "Score: 0";
             // 
             // bulletTm
             // 
@@ -75,7 +75,7 @@
             // 
             enemy_panel.Location = new Point(630, 50);
             enemy_panel.Name = "enemy_panel";
-            enemy_panel.Size = new Size(558, 638);
+            enemy_panel.Size = new Size(560, 638);
             enemy_panel.TabIndex = 2;
             // 
             // label2
@@ -83,9 +83,9 @@
             label2.AutoSize = true;
             label2.Location = new Point(630, 9);
             label2.Name = "label2";
-            label2.Size = new Size(95, 25);
+            label2.Size = new Size(75, 25);
             label2.TabIndex = 3;
-            label2.Text = "Score: 100";
+            label2.Text = "Score: 0";
             // 
             // Client
             // 
