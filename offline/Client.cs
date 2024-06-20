@@ -15,7 +15,6 @@ namespace offline
         Game myGame;
         Game enemyGame;
         bool newBullet = false;
-        //bool newEgg;
         public Client()
         {
             InitializeComponent();
@@ -23,7 +22,6 @@ namespace offline
             enemyGame = new Game();
             myGame.InitializeGame(my_panel);
             enemyGame.InitializeGame(enemy_panel);
-            //newEgg = myGame.newEgg;
             ConnectToServer();
             //ShowWaitingMessage(); // Hiển thị thông báo chờ
             Task.Run(() => ReceiveGameState());
@@ -49,16 +47,17 @@ namespace offline
                 Bullets = new List<Position>(),
                 Chickens = new List<Position>(),
                 Eggs = new List<Position>(),
-                Lives = myGame.Lives,
-                NewEgg = null
+                Lives = myGame.Lives
             };
 
+            //Bullet
             if (myGame.Bullets.Count > 0 && newBullet)
             {
                 var lastBullet = myGame.Bullets[myGame.Bullets.Count - 1];
                 gameState.Bullets.Add(new Position { X = lastBullet.Left, Y = lastBullet.Top });
             }
 
+            //Chickens
             for (int i = 0; i < myGame._chickenRows; i++)
             {
                 for (int j = 0; j < myGame._chickenCols; j++)
@@ -69,15 +68,12 @@ namespace offline
                     }
                 }
             }
-            //MessageBox.Show(myGame._eggs.ToString());
+
             // Eggs
             if (myGame._eggs.Count > 0 && myGame.newEgg)
             {
-                //MessageBox.Show("Có new egg");
                 var lastEgg = myGame._eggs[myGame._eggs.Count - 1];
-                gameState.Eggs.Add(new Position { X = lastEgg.Left, Y = lastEgg.Top });
-                //MessageBox.Show("X: ", lastEgg.Left.ToString() + ", Y:" + lastEgg.Top.ToString());
-                //gameState.NewEgg = new Position { X = lastEgg.Left, Y = lastEgg.Top };  
+                gameState.Eggs.Add(new Position { X = lastEgg.Left, Y = lastEgg.Top });    
             }
 
             //send message
@@ -85,8 +81,6 @@ namespace offline
             byte[] data = Encoding.ASCII.GetBytes(message);
             stream.Write(data, 0, data.Length);
 
-            // Debug output
-            //MessageBox.Show("GameState sent: " + message);
             newBullet = false;
             myGame.newEgg = false;
         }
@@ -101,9 +95,6 @@ namespace offline
                 string message = Encoding.ASCII.GetString(buffer, 0, bytesRead);
                 GameState gameState = JsonConvert.DeserializeObject<GameState>(message);
 
-                // Debug output
-                //MessageBox.Show("GameState received: " + message);
-
                 this.Invoke(new Action(() =>
                 {
                     UpdateEnemyGameState(gameState);
@@ -113,17 +104,8 @@ namespace offline
 
         private void UpdateEnemyGameState(GameState gameState)
         {
-            //enemyGame.UpdateRocketPosition(gameState);
-            //enemyGame.UpdateBullets(gameState, enemy_panel);
-            //enemyGame.RemoveNullChickens(gameState, enemy_panel);
             enemyGame.UpdateGameState(gameState, enemy_panel);
-            //Thêm egg mới vào enemy panel nếu có
-            //if (gameState.NewEgg != null || gameState.Eggs.Count > 0)
-            //{     
-            //    enemyGame.AddEgg(new Position { X = gameState.NewEgg.X, Y = gameState.NewEgg.Y }, enemy_panel);
-            //    //enemyGame.AddEgg(new Position { X = gameState.Eggs[gameState.Eggs.Count-1].X, Y = gameState.Eggs[gameState.Eggs.Count - 1].Y}, enemy_panel);
-            //    MessageBox.Show("đã thêm trứng");
-            //}
+            
         }
 
         private void Game_KeyDown(object sender, KeyEventArgs e)
@@ -168,7 +150,6 @@ namespace offline
             enemyGame.UpdateChickenState(enemy_panel);
             if (myGame.newEgg)
             {
-                //MessageBox.Show("newwgg");
                 SendGameState();
                 myGame.newEgg = false;
             }

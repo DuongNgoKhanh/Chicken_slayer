@@ -166,7 +166,6 @@ namespace offline
             UpdateBullets(gameState, panel);
             RemoveNullChickens(gameState, panel);
             UpdateEggsPosition(gameState, panel);
-            //AddEgg(gameState.NewEgg, panel);
             UpdateLives(gameState);
         }
 
@@ -271,29 +270,10 @@ namespace offline
             }
         }
 
-        public void AddEgg(Position eggPosition, Panel panel)
-        {
-            if(eggPosition != null)
-            {
-                Piece newEgg = new Piece(20, 20)
-                {
-                    Left = eggPosition.X,
-                    Top = eggPosition.Y,
-                    Image = Properties.Resources.egg
-                };
-
-                _eggs.Add(newEgg);
-                panel.Controls.Add(newEgg);
-            }
-        // Debug output
-             //MessageBox.Show("Egg added at: " + eggPosition.X + ", " + eggPosition.Y);
-        }
-
         public void EndGame(Bitmap endGameImage)
         {
             // Implement end game logic here, e.g., show game over screen
         }
-        
 
         private Piece LaunchRandomEgg()
         {
@@ -422,13 +402,10 @@ namespace offline
             }
         }
         
-        
-
         public void cls(object sender, EventArgs e, Form form)
         {
             form.Close();
         }
-
 
         public void EndGame(Bitmap img, Form form)
         {
@@ -436,8 +413,8 @@ namespace offline
             Piece endGameImage = new Piece(100, 100)
             {
                 Image = img,
-                Left = form.Width / 2 - 50, // Căn giữa hình ảnh
-                Top = form.Height / 2 - 50 // Căn giữa hình ảnh
+                Left = form.Width / 2 - 50, 
+                Top = form.Height / 2 - 50 
             };
 
             // Thêm sự kiện Click để đóng Form khi người dùng nhấp vào hình ảnh kết thúc trò chơi
@@ -471,7 +448,6 @@ namespace offline
         public List<Position> Chickens { get; set; }
         public List<Position> Eggs { get; set; }
         public int Lives { get; set; }
-        public Position NewEgg { get; set; }  // Thêm thuộc tính này
     }
 
     public class Position
