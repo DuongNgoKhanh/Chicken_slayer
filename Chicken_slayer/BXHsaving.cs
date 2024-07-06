@@ -18,6 +18,8 @@ namespace Chicken_slayer
         public BXHsaving()
         {
             InitializeComponent();
+            FirestoreHelper.SetEnvironmentVarible();
+
         }
 
         private BXHdata GetWriteData()
@@ -40,6 +42,9 @@ namespace Chicken_slayer
             DocumentReference docRef = db.Collection("BXH").Document(data.NAME);
             docRef.SetAsync(data);
             MessageBox.Show("Success.");
+            Menu Ve_Menu = new Menu();
+            this.Hide();
+            Ve_Menu.Show();
         }
 
         private void guna2TextBox2_TextChanged(object sender, EventArgs e)

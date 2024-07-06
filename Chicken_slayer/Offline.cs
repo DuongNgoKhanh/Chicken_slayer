@@ -265,6 +265,7 @@ namespace Chicken_slayer
             pic.Top = Height / 2 - pic.Height / 2;
             Controls.Add(pic);
             ShowScoreForm();
+            this.Hide();
         }
 
         private void ShowScoreForm()

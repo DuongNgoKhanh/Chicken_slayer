@@ -69,8 +69,9 @@ namespace Chicken_slayer
 
         private void btn_back_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            Log_in Dang_nhap = new Log_in();
+            this.Hide();
+            Dang_nhap.Show();
         }
     }
 }
